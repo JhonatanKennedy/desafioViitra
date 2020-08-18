@@ -8,8 +8,10 @@ import Input from '../Input';
 const ModalAddFood = ({ isOpen, setIsOpen, handleAddFood }) => {
   const formRef = useRef(null);
 
-  function handleSubmit(data) {
-    // TODO ADD A NEW FOOD AND CLOSE THE MODAL
+  async function handleSubmit(data) {
+    await handleAddFood(data);
+    setIsOpen(!isOpen);
+    window.location.reload(true);
   }
 
   return (

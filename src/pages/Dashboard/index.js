@@ -18,18 +18,27 @@ const Dashboard = () => {
 
   async function handleAddFood(food) {
     try {
-      // TODO ADD A NEW FOOD PLATE TO THE API
+      await api.post('/foods',food);
     } catch (err) {
       console.log(err);
     }
   }
 
   async function handleUpdateFood(food) {
-    // TODO UPDATE A FOOD PLATE ON THE API
+    try {
+      await api.put(`/foods/${food.id}`,food);
+    } catch (err) {
+      console.log(err.message);
+    }
   }
 
   async function handleDeleteFood(id) {
-    // TODO DELETE A FOOD PLATE FROM THE API
+    try {
+      await api.delete(`/foods/${id}`);
+      window.location.reload(true);
+    } catch ( err ) {
+      console.log(err.message);
+    }
   }
 
   function toggleModal() {
@@ -41,8 +50,22 @@ const Dashboard = () => {
   }
 
   function handleEditFood(food) {
-    // TODO SET THE CURRENT EDITING FOOD ID IN THE STATE
+    setEditingFood(food);
+    setEditModalOpen(!editModalOpen)
   }
+
+  useEffect(() => {
+    async function getFoods(){
+      try {
+        const { data } = await api.get('/foods');
+        setFoods(data);
+      } catch (err) {
+        console.log(err.message);
+      }
+    }
+    getFoods();
+  },[]);
+
 
   return (
     <>

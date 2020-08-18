@@ -14,7 +14,10 @@ const ModalEditFood = ({
   const formRef = useRef(null);
 
   function handleSubmit(data) {
-    // EDIT A FOOD PLATE AND CLOSE THE MODAL
+    data['id'] = editingFood.id;
+    data['available'] = editingFood.available;
+    handleUpdateFood(data);
+    window.location.reload(true);
   }
 
   return (
