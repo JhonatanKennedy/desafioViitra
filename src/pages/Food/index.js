@@ -32,7 +32,7 @@ const Food = () => {
                 <h1>{product.name}</h1>
             </ContainerHeader>
             <ContainerImage>
-                <img src={product.image} />
+                <img src={product.image} alt={product.name} />
             </ContainerImage>
             <ContainerInfo>
                 <div>

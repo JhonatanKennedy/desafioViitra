@@ -33,12 +33,17 @@ const Dashboard = () => {
   }
 
   async function handleDeleteFood(id) {
-    try {
+    const deletedIndex = foods.map((element) => element.id).indexOf(id);
+    const arrayFoods = foods;
+    
+    try{
+      arrayFoods.splice(deletedIndex,1)
       await api.delete(`/foods/${id}`);
-      window.location.reload(true);
-    } catch ( err ) {
-      console.log(err.message);
+      setFoods([...arrayFoods]);
+    }catch(err){
+      console.log(err.message)
     }
+   
   }
 
   function toggleModal() {
@@ -83,8 +88,8 @@ const Dashboard = () => {
       />
 
       <FoodsContainer data-testid="foods-list">
-        {foods &&
-          foods.map(food => (
+        {console.log(foods)}
+        {foods && foods.map(food => (
             <Food
               key={food.id}
               food={food}

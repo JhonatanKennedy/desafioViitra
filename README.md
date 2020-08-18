@@ -14,7 +14,7 @@ O projeto é em reactJS e possui uma estrutura de um CRUD simples de um serviço
 - Ao clicar em um card especifico o usuario deverá ser redirecionado para uma outra rota com mais detalhes da comida (dica: utilize react-router-dom passando o id na url e mostre os atributos quantity e timeToCook nessa nova tela)     feito
 
 ### Bugs
-- A lista de cards de comidas não estão em grid (vide pasta layout com o design   correto da lista)
+- A lista de cards de comidas não estão em grid (vide pasta layout com o design   correto da lista) feito
 - Os modais não estão adicionando/editando uma comida                   feito
 
 

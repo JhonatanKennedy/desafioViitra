@@ -22,33 +22,21 @@
     },
     {
       "image": "https://p2.trrsf.com/image/fget/cf/460/0/images.terra.com/2020/05/27/shutterstock1710468256.jpg",
-      "name": "Hamburguer topepr",
-      "price": "10",
-      "description": "mt bom",
-      "quantity": "5",
-      "timeToCook": "10min",
-      "id": 4,
-      "available": true
+      "name": "asdasd",
+      "price": "asdasd",
+      "description": "asdasdas",
+      "quantity": "dasda",
+      "timeToCook": "sdsa",
+      "id": 4
     },
     {
       "image": "https://p2.trrsf.com/image/fget/cf/460/0/images.terra.com/2020/05/27/shutterstock1710468256.jpg",
-      "name": "sdaasd",
-      "price": "12312",
-      "description": "asdasd",
-      "quantity": "12",
-      "timeToCook": "12min",
-      "id": 5,
-      "available": true
-    },
-    {
-      "image": "https://p2.trrsf.com/image/fget/cf/460/0/images.terra.com/2020/05/27/shutterstock1710468256.jpg",
-      "name": "dasdasdasdas",
-      "price": "3131123",
-      "description": "asdasdasdasda",
-      "quantity": "123",
-      "timeToCook": "12min",
-      "id": 6,
-      "available": true
+      "name": "asdasdsa",
+      "price": "asdasdasd",
+      "description": "asdasdas",
+      "quantity": "dasdas",
+      "timeToCook": "asdas",
+      "id": 5
     }
   ]
 }
