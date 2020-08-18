@@ -1,8 +1,10 @@
 import styled from 'styled-components';
 
 export const FoodsContainer = styled.div`
-  display: flex;
-  flex-direction: column;
+  display: grid;
+  grid-template-columns: 31% 31% 31%;
+  grid-column-gap: 3.33%;
+  grid-row-gap: 3.33%;
   align-items: center;
   width: 100%;
   max-width: 1280px;

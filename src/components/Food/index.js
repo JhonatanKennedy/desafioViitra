@@ -1,5 +1,7 @@
 import React, { useState } from 'react';
 
+import { Link } from 'react-router-dom';
+
 import { FiEdit3, FiTrash } from 'react-icons/fi';
 
 import { Container } from './styles';
@@ -24,9 +26,11 @@ const Food = ({ food, handleDelete, handleEditFood }) => {
 
   return (
     <Container available={isAvailable}>
+      <Link to={`/food/${food.id}`}>
       <header>
         <img src={food.image} alt={food.name} />
       </header>
+      </Link>
       <section className="body">
         <h2>{food.name}</h2>
         <p>{food.description}</p>

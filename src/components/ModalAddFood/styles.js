@@ -42,3 +42,9 @@ export const Form = styled(Unform)`
     }
   }
 `;
+
+export const Footer = styled.div`
+  display:flex;
+  justify-content: space-evenly;
+  align-items:center;
+`;

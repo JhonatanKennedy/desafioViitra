@@ -1,14 +1,6 @@
 {
   "foods": [
     {
-      "image": "https://storage.googleapis.com/golden-wind/bootcamp-gostack/desafio-food/food1.png",
-      "name": "Ao molho",
-      "price": "19.90",
-      "description": "Macarrão ao molho branco, fughi e cheiro verde das montanhas.",
-      "id": 1,
-      "available": true
-    },
-    {
       "id": 2,
       "name": "Veggie",
       "description": "Macarrão com pimentão, ervilha e ervas finas colhidas no himalaia.",
@@ -27,6 +19,36 @@
       "image": "https://storage.googleapis.com/golden-wind/bootcamp-gostack/desafio-food/food3.png",
       "quantity": 5,
       "timeToCook": "20min"
+    },
+    {
+      "image": "https://p2.trrsf.com/image/fget/cf/460/0/images.terra.com/2020/05/27/shutterstock1710468256.jpg",
+      "name": "Hamburguer topepr",
+      "price": "10",
+      "description": "mt bom",
+      "quantity": "5",
+      "timeToCook": "10min",
+      "id": 4,
+      "available": true
+    },
+    {
+      "image": "https://p2.trrsf.com/image/fget/cf/460/0/images.terra.com/2020/05/27/shutterstock1710468256.jpg",
+      "name": "sdaasd",
+      "price": "12312",
+      "description": "asdasd",
+      "quantity": "12",
+      "timeToCook": "12min",
+      "id": 5,
+      "available": true
+    },
+    {
+      "image": "https://p2.trrsf.com/image/fget/cf/460/0/images.terra.com/2020/05/27/shutterstock1710468256.jpg",
+      "name": "dasdasdasdas",
+      "price": "3131123",
+      "description": "asdasdasdasda",
+      "quantity": "123",
+      "timeToCook": "12min",
+      "id": 6,
+      "available": true
     }
   ]
 }

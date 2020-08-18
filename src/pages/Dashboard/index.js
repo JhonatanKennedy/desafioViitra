@@ -91,7 +91,7 @@ const Dashboard = () => {
               handleDelete={handleDeleteFood}
               handleEditFood={handleEditFood}
             />
-          ))}
+          ))}          
       </FoodsContainer>
     </>
   );
