@@ -1,7 +1,7 @@
 import React, { useRef } from 'react';
 
 import { FiCheckSquare } from 'react-icons/fi';
-import { Form } from './styles';
+import { Form, Footer } from './styles';
 import Modal from '../Modal';
 import Input from '../Input';
 
@@ -58,17 +58,19 @@ const ModalEditFood = ({
         <Input name="price" placeholder="Ex: 19.90" />
 
         <Input name="description" placeholder="Descrição" />
-        <div>
-          <Input name="quantity" placeholder="Quantidade" />
-            
-          <Input name="timeToCook" placeholder="Tempo de preparo" />            
-        </div>
-        <button type="submit">
-          <div className="text">Editar Prato</div>
-          <div className="icon">
-            <FiCheckSquare size={24} />
+        <Footer>
+          <div>
+            <Input name="quantity" placeholder="Quantidade" />
+              
+            <Input name="timeToCook" placeholder="Tempo de preparo" />            
           </div>
-        </button>
+          <button type="submit">
+            <div className="text">Editar Prato</div>
+            <div className="icon">
+              <FiCheckSquare size={24} />
+            </div>
+          </button>
+        </Footer>
       </Form>
     </Modal>
   );
