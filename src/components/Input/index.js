@@ -1,7 +1,7 @@
 import React, { useEffect, useRef, useState, useCallback } from 'react';
 import { useField } from '@unform/core';
 
-import { Container } from './styles';
+import { Container, Error } from './styles';
 
 const Input = ({ name, icon: Icon, ...rest }) => {
   const inputRef = useRef(null);
@@ -9,11 +9,12 @@ const Input = ({ name, icon: Icon, ...rest }) => {
   const [isFocused, setIsFocused] = useState(false);
   const [isFilled, setIsFilled] = useState(false);
 
-  const { fieldName, defaultValue, registerField } = useField(name);
+  const { fieldName, defaultValue, registerField, error, clearError } = useField(name);
 
   const handleInputFocus = useCallback(() => {
     setIsFocused(true);
-  }, []);
+    clearError();
+  }, [clearError]);
 
   const handleInputBlur = useCallback(() => {
     setIsFocused(false);
@@ -30,17 +31,20 @@ const Input = ({ name, icon: Icon, ...rest }) => {
   }, [fieldName, registerField]);
 
   return (
-    <Container isFilled={isFilled} isFocused={isFocused}>
-      {Icon && <Icon size={20} />}
+    <>
+      <Container isFilled={isFilled} isFocused={isFocused}>
+        {Icon && <Icon size={20} />}
 
-      <input
-        onFocus={handleInputFocus}
-        onBlur={handleInputBlur}
-        defaultValue={defaultValue}
-        ref={inputRef}
-        {...rest}
-      />
-    </Container>
+        <input
+          onFocus={handleInputFocus}
+          onBlur={handleInputBlur}
+          defaultValue={defaultValue}
+          ref={inputRef}
+          {...rest}
+        />
+      </Container>
+      {error && <Error>{error}</Error>}
+    </>
   );
 };
 

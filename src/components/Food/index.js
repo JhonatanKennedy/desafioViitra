@@ -22,6 +22,7 @@ const Food = ({ food, handleDelete, handleEditFood }) => {
 
   function setEditingFood() {
     handleEditFood(food);
+    console.log(food)
   }
 
   return (

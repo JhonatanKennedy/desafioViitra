@@ -19,24 +19,6 @@
       "image": "https://storage.googleapis.com/golden-wind/bootcamp-gostack/desafio-food/food3.png",
       "quantity": 5,
       "timeToCook": "20min"
-    },
-    {
-      "image": "https://p2.trrsf.com/image/fget/cf/460/0/images.terra.com/2020/05/27/shutterstock1710468256.jpg",
-      "name": "asdasd",
-      "price": "asdasd",
-      "description": "asdasdas",
-      "quantity": "dasda",
-      "timeToCook": "sdsa",
-      "id": 4
-    },
-    {
-      "image": "https://p2.trrsf.com/image/fget/cf/460/0/images.terra.com/2020/05/27/shutterstock1710468256.jpg",
-      "name": "asdasdsa",
-      "price": "asdasdasd",
-      "description": "asdasdas",
-      "quantity": "dasdas",
-      "timeToCook": "asdas",
-      "id": 5
     }
   ]
 }

@@ -5,6 +5,19 @@ import { Form } from './styles';
 import Modal from '../Modal';
 import Input from '../Input';
 
+import * as Yup from 'yup';
+
+
+const schema = Yup.object().shape({
+  image: Yup.string().required('É necessario que tenha um link!'),
+  name: Yup.string().required('É necessario que tenha um nome!'),
+  price: Yup.number().typeError('É necessario que seja um numero!').required('É necessario que tenha um preço'),
+  description: Yup.string().required('É necessario que tenha uma descrição'),
+  quantity: Yup.number().typeError('É necessario que seja um numero!').required('É necessario que tenha uma quantidade!'),
+  timeToCook: Yup.string().required(),
+  
+});
+
 const ModalEditFood = ({
   isOpen,
   setIsOpen,
@@ -13,11 +26,26 @@ const ModalEditFood = ({
 }) => {
   const formRef = useRef(null);
 
-  function handleSubmit(data) {
-    data['id'] = editingFood.id;
-    data['available'] = editingFood.available;
-    handleUpdateFood(data);
-    window.location.reload(true);
+  async function handleSubmit(data) {
+    try{
+      formRef.current.setErrors({}); //seta todos os erros anteriores
+      await schema.validate(data, {
+        abortEarly: false
+      });
+
+      data['id'] = editingFood.id;
+      data['available'] = editingFood.available;
+      handleUpdateFood(data);
+      setIsOpen(!isOpen);
+    } catch(err) {
+
+      const validationErrors = {};
+      err.inner.forEach(error => {
+        validationErrors[error.path] = error.message;
+      });
+
+      formRef.current.setErrors(validationErrors);
+    }
   }
 
   return (
@@ -30,7 +58,11 @@ const ModalEditFood = ({
         <Input name="price" placeholder="Ex: 19.90" />
 
         <Input name="description" placeholder="Descrição" />
-
+        <div>
+          <Input name="quantity" placeholder="Quantidade" />
+            
+          <Input name="timeToCook" placeholder="Tempo de preparo" />            
+        </div>
         <button type="submit">
           <div className="text">Editar Prato</div>
           <div className="icon">

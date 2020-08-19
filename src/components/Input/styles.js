@@ -49,3 +49,6 @@ export const Container = styled.div`
     margin-right: 16px;
   }
 `;
+export const Error = styled.span`
+  color:red;
+`;

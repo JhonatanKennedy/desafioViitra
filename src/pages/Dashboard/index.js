@@ -19,14 +19,19 @@ const Dashboard = () => {
   async function handleAddFood(food) {
     try {
       await api.post('/foods',food);
+      window.location.reload(true);
     } catch (err) {
       console.log(err);
     }
   }
 
   async function handleUpdateFood(food) {
+    const editedIndex = foods.map((element) => element.id).indexOf(food.id);
+    const arrayFoods = foods;
+    arrayFoods[editedIndex] = food
     try {
       await api.put(`/foods/${food.id}`,food);
+      setFoods(arrayFoods);
     } catch (err) {
       console.log(err.message);
     }
@@ -35,9 +40,9 @@ const Dashboard = () => {
   async function handleDeleteFood(id) {
     const deletedIndex = foods.map((element) => element.id).indexOf(id);
     const arrayFoods = foods;
-    
+    arrayFoods.splice(deletedIndex,1);
+  
     try{
-      arrayFoods.splice(deletedIndex,1)
       await api.delete(`/foods/${id}`);
       setFoods([...arrayFoods]);
     }catch(err){
@@ -88,7 +93,6 @@ const Dashboard = () => {
       />
 
       <FoodsContainer data-testid="foods-list">
-        {console.log(foods)}
         {foods && foods.map(food => (
             <Food
               key={food.id}
